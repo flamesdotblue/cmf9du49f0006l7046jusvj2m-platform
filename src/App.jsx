@@ -1,28 +1,26 @@
-import { useState } from 'react'
+import React from 'react';
+import HeroCover from './components/HeroCover';
+import JobsShowcase from './components/JobsShowcase';
+import MentorsShowcase from './components/MentorsShowcase';
+import EventCTA from './components/EventCTA';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
+    <div className="min-h-screen bg-neutral-950 text-neutral-100 antialiased">
+      <HeroCover />
+      <main>
+        <JobsShowcase />
+        <MentorsShowcase />
+        <EventCTA />
+      </main>
+      <footer className="border-t border-neutral-800/70">
+        <div className="mx-auto max-w-7xl px-6 py-10 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-neutral-400">
+          <p>© {new Date().getFullYear()} Campus Career Collective</p>
+          <p className="flex items-center gap-2">
+            Built with care • Crafted for opportunity
+          </p>
         </div>
-      </div>
+      </footer>
     </div>
-  )
+  );
 }
-
-export default App
